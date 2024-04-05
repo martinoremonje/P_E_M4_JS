@@ -76,7 +76,7 @@ const Agregar = () => {
         animalCard.className = 'animal-card'; 
         animalCard.innerHTML = `
       <div class="animal-background" style="background-image: url('${animal.Img}');"></div>
-      <button onclick="playSound('${animal.Sonido}')"><img src="assets/imgs/audio.svg" alt="Play Audio" style="width: 130px; height: 24px;"></button>
+      <button style="background-color: grey" onclick="playSound('${animal.Sonido}')"><img src="assets/imgs/audio.svg" alt="Play Audio" style="width: 130px; height: 24px;"></button>
     `;
       
     animalCard.querySelector('.animal-background').addEventListener('click', function() {
@@ -103,11 +103,12 @@ function showModal(imgSrc, edad, comentarios) {
     modalBody.innerHTML = `
       <img src="${imgSrc}" alt="Animal" style="width: 100%;">
       <p>Edad: ${edad}</p>
+      <p>Comentario</p>
       <p>${comentarios}</p>
     `;
   
     $('#exampleModal').modal('show');
-  };
+};
   
   
   
