@@ -1,6 +1,7 @@
 import { Leon, Lobo, Oso, Serpiente, Aguila } from './AnimalesEspeciales.js';
 
-//Aqui la declare de forma global, no encontre otra forma de agregarselo de forma dinamica
+
+//Aqui playSound la declare de forma global, no encontre otra forma de agregarselo de forma dinamica
 window.playSound = function(sonidoUrl) {
     const audio = new Audio(sonidoUrl);
     audio.play();
@@ -18,7 +19,7 @@ window.playSound = function(sonidoUrl) {
             case "Aguila":
             case "Oso":
             case "Lobo":
-                previewDiv.style.backgroundImage = `url('./assets/imgs/${value}.jpg')`;
+                previewDiv.style.backgroundImage = `url('assets/imgs/${value}.jpg')`;
                 previewDiv.style.backgroundSize = 'contain'; 
                 previewDiv.style.backgroundPosition = 'center'; 
                 break;
@@ -29,11 +30,11 @@ window.playSound = function(sonidoUrl) {
     selectElement.addEventListener('change', changeImage);
 })();
 
-function Reset() {
+const Reset = () =>{
     document.getElementById('animal').value = "Seleccione un animal";
     document.getElementById('edad').value = "Seleccione un rango de años";
     document.getElementById('comentarios').value = "";
-    document.getElementById('preview').style.backgroundImage = "url('./assets/imgs/lion.svg')"
+    document.getElementById('preview').style.backgroundImage = "url('assets/imgs/lion.svg')"
   }
   
 
@@ -75,7 +76,7 @@ const Agregar = () => {
         animalCard.className = 'animal-card'; 
         animalCard.innerHTML = `
       <div class="animal-background" style="background-image: url('${animal.Img}');"></div>
-      <button onclick="playSound('${animal.Sonido}')"><img src="assets/imgs/audio.svg" alt="Play Audio" style="width: 130px; height: 24px; color: black"></button>
+      <button onclick="playSound('${animal.Sonido}')"><img src="assets/imgs/audio.svg" alt="Play Audio" style="width: 130px; height: 24px;"></button>
     `;
       
     animalCard.querySelector('.animal-background').addEventListener('click', function() {
@@ -95,7 +96,7 @@ document.getElementById("btnRegistrar").addEventListener("click", function(){
 });
 
 //Esta es la funcion para mostrar el modal del animal, se le agrego al div que contiene la img del animal creado,
-//En la linea 79
+//En la linea 82
 
 function showModal(imgSrc, edad, comentarios) {
     const modalBody = document.querySelector('#exampleModal .modal-body');
