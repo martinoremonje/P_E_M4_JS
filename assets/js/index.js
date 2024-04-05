@@ -33,7 +33,7 @@ function Reset() {
     document.getElementById('animal').value = "Seleccione un animal";
     document.getElementById('edad').value = "Seleccione un rango de años";
     document.getElementById('comentarios').value = "";
-    document.getElementById('preview').style.backgroundImage = "url('/assets/imgs/lion.svg')"
+    document.getElementById('preview').style.backgroundImage = "url('./assets/imgs/lion.svg')"
   }
   
 
@@ -50,19 +50,19 @@ const Agregar = () => {
         let animal;
         switch (tipoAnimal) {
           case 'Leon':
-            animal = new Leon('León', edadAnimal, '/assets/imgs/Leon.jpg', comentariosAnimal, '/assets/sounds/Rugido.mp3');
+            animal = new Leon('León', edadAnimal, 'assets/imgs/Leon.jpg', comentariosAnimal, 'assets/sounds/Rugido.mp3');
             break;
           case 'Lobo':
-            animal = new Lobo('Lobo', edadAnimal, '/assets/imgs/Lobo.jpg', comentariosAnimal, '/assets/sounds/Aullido.mp3');
+            animal = new Lobo('Lobo', edadAnimal, 'assets/imgs/Lobo.jpg', comentariosAnimal, 'assets/sounds/Aullido.mp3');
             break;
           case 'Oso':
-            animal = new Oso('Oso', edadAnimal, '/assets/imgs/Oso.jpg', comentariosAnimal, '/assets/sounds/Gru単ido.mp3');
+            animal = new Oso('Oso', edadAnimal, 'assets/imgs/Oso.jpg', comentariosAnimal, 'assets/sounds/Gru単ido.mp3');
             break;
           case 'Serpiente':
-            animal = new Serpiente('Serpiente', edadAnimal, '/assets/imgs/Serpiente.jpg', comentariosAnimal, '/assets/sounds/Siseo.mp3');
+            animal = new Serpiente('Serpiente', edadAnimal, 'assets/imgs/Serpiente.jpg', comentariosAnimal, 'assets/sounds/Siseo.mp3');
             break;
           case 'Aguila':
-            animal = new Aguila('Águila', edadAnimal, '/assets/imgs/Aguila.jpg', comentariosAnimal, '/assets/sounds/Chillido.mp3');
+            animal = new Aguila('Águila', edadAnimal, 'assets/imgs/Aguila.jpg', comentariosAnimal, 'assets/sounds/Chillido.mp3');
             break;
           
           default:
@@ -75,7 +75,7 @@ const Agregar = () => {
         animalCard.className = 'animal-card'; 
         animalCard.innerHTML = `
       <div class="animal-background" style="background-image: url('${animal.Img}');"></div>
-      <button onclick="playSound('${animal.Sonido}')"><img src="/assets/imgs/audio.svg" alt="Play Audio" style="width: 130px; height: 24px; color: black"></button>
+      <button onclick="playSound('${animal.Sonido}')"><img src="assets/imgs/audio.svg" alt="Play Audio" style="width: 130px; height: 24px; color: black"></button>
     `;
       
     animalCard.querySelector('.animal-background').addEventListener('click', function() {
